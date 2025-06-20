@@ -2,7 +2,7 @@ defmodule TenMilionSpamer.Worker do
   use GenServer
 
   # localhost
-  @target_ip {10.161, 53, 15}
+  @target_ip {10,161, 53, 15}
   @target_port 5_000
 
   def start_link(id: id, name: name) do
