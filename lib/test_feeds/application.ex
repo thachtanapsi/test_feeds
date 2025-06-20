@@ -8,6 +8,10 @@ defmodule TestFeeds.Application do
   @impl true
   def start(_type, _args) do
     children = [
+      # spamwer
+      {Registry, keys: :unique, name: :my_registry},
+      TenMilionSpamer.Supervisor,
+      UdpSender,
       # Starts a worker by calling: TestFeeds.Worker.start_link(arg)
       # {TestFeeds.Worker, arg}
     ]
